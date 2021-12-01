@@ -1,5 +1,5 @@
-import day1 from './day-1-1';
-import challenge from './day-1-2';
+import prevChallenge from './challenge-1';
+import challenge from './challenge-2';
 
 describe('challenge 1-2', () => {
   it('should not group measurements of less than three', () => {
@@ -24,10 +24,10 @@ describe('challenge 1-2', () => {
   });
 
   it('should work in combination with day-1-1 solution', () => {
-    expect(day1.solver(...challenge.solver(199, 200, 208, 210, 200, 207, 240, 269, 260, 263))).toStrictEqual(5);
+    expect(prevChallenge.solver(...challenge.solver(199, 200, 208, 210, 200, 207, 240, 269, 260, 263))).toStrictEqual(5);
   });
 
   it('should measure the solution correctly', () => {
-    expect(day1.solver(...challenge.solver(...challenge.input))).toStrictEqual(1362);
+    expect(prevChallenge.solver(...challenge.solver(...challenge.input))).toStrictEqual(1362);
   });
 });

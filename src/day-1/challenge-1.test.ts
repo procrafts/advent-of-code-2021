@@ -1,4 +1,4 @@
-import challenge from './day-1-1';
+import challenge from './challenge-1';
 
 describe('challenge 1-1', () => {
   it('should have no measurement increases if nothing measured', () => {

@@ -1,5 +1,5 @@
-import { CallWithInput, Challenge, Solver } from './challenge';
-import input from './day-1-1-input';
+import { CallWithInput, Challenge, Solver } from '../challenge';
+import input from './input';
 
 export const solver: Solver<number[], number> = (...args: number[]) => {
   let increases = 0;

@@ -1,6 +1,6 @@
-import { CallWithInput, Challenge, Solver } from './challenge';
-import day1 from './day-1-1';
-import input from './day-1-1-input';
+import { CallWithInput, Challenge, Solver } from '../challenge';
+import prevChallenge from './challenge-1';
+import input from './input';
 
 export const solver: Solver<number[], number[]> = (...args: number[]) => {
   const measurementGroups = [];
@@ -20,7 +20,7 @@ function sumUp(values: number[]): number {
   return values.reduce((prev, curr) => prev + curr, 0);
 }
 
-export const callWithInput: CallWithInput = () => day1.solver(...solver(...input)).toString() + ' measurement increases';
+export const callWithInput: CallWithInput = () => prevChallenge.solver(...solver(...input)).toString() + ' measurement increases';
 
 export default {
   solver,
