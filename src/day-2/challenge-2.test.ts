@@ -1,9 +1,9 @@
 import { multiplyAimPosition } from './challenge-2';
 import input from './input';
-import { aimNavigator, navigator } from './navigator';
+import { aimNavigator } from './navigator';
 
-describe('challenge 2-1', () => {
-  describe('navigator', () => {
+describe('challenge 2-2', () => {
+  describe('aim navigator', () => {
     it('should start with position of 0', () => {
       expect(aimNavigator()).toStrictEqual([0, 0, 0]);
     });
