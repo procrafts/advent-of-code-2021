@@ -1,17 +1,20 @@
-import { Challenge } from './challenge';
+run();
 
-const day = process.argv[2];
-const challenge = process.argv[3];
-
-if (!/^[1-9]$|^1[0-9]$|^2[0-5]$/.test(day) || !/^[1-2]$/.test(challenge)) {
-  console.log('Which challenge do you want to run? Call this command with "day challenge" as argument (npm start [0-25] [1-2]).');
-  process.exit(0);
+async function run() {
+  for (let i = 1; i <= 25; i++) {
+    await runChallenge(i, 1);
+    await runChallenge(i, 2);
+  }
 }
 
-import(`./day-${day}/challenge-${challenge}`).then((res: { default: Challenge<unknown[], unknown> }) => {
-  console.log(`running challenge ${challenge}`);
-  console.log(`Solution: ${res.default.callWithInput()}`);
-}, () => {
-  console.log(`day ${day} challenge ${challenge} is not yet available`);
-});
-
+function runChallenge(i: number, j: number) {
+  return import(`./day-${i}/challenge-${j}`).then((res: { default: () => string }) => {
+    console.log(`Challenge ${i}-${j}`);
+    console.log(res.default());
+    console.log('------');
+  }, () => {
+    console.log(`Challenge ${i}-${j}`);
+    console.log('not yet available');
+    console.log('------');
+  });
+}
