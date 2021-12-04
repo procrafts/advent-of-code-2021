@@ -1,11 +1,17 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-export function readInput(path: string[]): string[] {
+export function readInput(path: string[], config: {trim: boolean, filterEmpty: boolean} = {trim: true, filterEmpty: true}): string[] {
   const allFileContents = readFileSync(join(__dirname, ...path), 'utf-8');
   return allFileContents.split(/\r?\n/).map(line => {
-    return line.trim();
+    if(config.trim) {
+      return line.trim();
+    }
+    return line;
   }).filter(line => {
-    return line.length;
+    if(config.filterEmpty) {
+      return line.length;
+    }
+    return true;
   });
 }
