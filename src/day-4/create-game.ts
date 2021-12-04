@@ -1,34 +1,35 @@
-
-export type Board = {value: number, marked: boolean }[][];
+export type Board = { value: number, marked: boolean }[][];
 
 export interface Game {
+  completeBoards?: Board[][];
   drawPile: number[];
   boards: Board[];
-  drawnNumbers?: number[]
-  winner?: { board: Board, score: number }
+  drawnNumbers?: number[];
+  winner?: { board: Board, score: number };
+  looser?: { board: Board, score: number };
 }
 
 export function createGame(checkForComplete: boolean, ...args: string[]): Game {
-  const game: Partial<Game> = {}
+  const game: Partial<Game> = {};
 
   const addboardRow = boardBuilder(game);
 
   args.forEach(line => {
-    if(isdrawPile(line)) {
-      adddrawPile(game, line)
+    if (isdrawPile(line)) {
+      adddrawPile(game, line);
       return;
     }
-    if(isboardRow(line)) {
-      addboardRow(line)
+    if (isboardRow(line)) {
+      addboardRow(line);
       return;
     }
-    if(isEmptyLine(line)) {
+    if (isEmptyLine(line)) {
       return;
     }
-    throw new Error('Unknown line format: ' + line)
-  })
+    throw new Error('Unknown line format: ' + line);
+  });
 
-  if(validateGameInput(game, checkForComplete)) {
+  if (validateGameInput(game, checkForComplete)) {
     return game;
   }
   throw new Error('Could not generate game input');
@@ -39,8 +40,8 @@ function isdrawPile(line: string) {
 }
 
 function adddrawPile(result: Partial<Game>, line: string): void {
-  if(!result.drawPile) {
-    result.drawPile = line.split(',').map(i => Number.parseInt(i))
+  if (!result.drawPile) {
+    result.drawPile = line.split(',').map(i => Number.parseInt(i));
   } else {
     throw new Error('multiple lines matching format for drawn numbers');
   }
@@ -57,26 +58,26 @@ function validateBoardFormat(board: { value: number; marked: boolean }[][], boar
 }
 
 function boardBuilder(result: Partial<Game>) {
-  let board: Board = []
+  let board: Board = [];
 
   return function addboardRow(line: string): void {
     const boardRow = line.split(' ').filter(i => i !== '').map(i => {
-      return {value: Number.parseInt(i), marked: false};
+      return { value: Number.parseInt(i), marked: false };
     });
 
     validateBoardFormat(board, boardRow);
 
     board.push(boardRow);
 
-    if(board.length === board[0].length) {
-      if(result.boards) {
-        result.boards.push(board)
+    if (board.length === board[0].length) {
+      if (result.boards) {
+        result.boards.push(board);
       } else {
         result.boards = [board];
       }
       board = [];
     }
-  }
+  };
 }
 
 
@@ -85,13 +86,13 @@ function isEmptyLine(line: string) {
 }
 
 function validateGameInput(result: Partial<Game>, checkForComplete: boolean): result is Game {
-  if(!checkForComplete) {
+  if (!checkForComplete) {
     return true;
   }
-  if(!result.drawPile) {
+  if (!result.drawPile) {
     return false;
   }
-  if(!result.boards) {
+  if (!result.boards) {
     return false;
   }
   return true;
