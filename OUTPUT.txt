@@ -1,0 +1,52 @@
+Challenge 1-1
+1387 measurement increases
+------
+
+
+Challenge 1-2
+1362 measurement increases
+------
+
+
+Challenge 2-1
+multiplied position is 1580000
+------
+
+
+Challenge 2-2
+multiplied position is 1251263225
+------
+
+
+Challenge 3-1
+power consumption is 3882564
+------
+
+
+Challenge 3-2
+life support rating is 3385170
+------
+
+
+Challenge 4-1
+winner is with score 2496 
+    X69  X29  O49  O 9  X76
+    X 4  X83  X64  X33  X 2
+    O67  X81  O88  O70  O39
+    O85  O73  O97  X15  X 8
+    O 7  O13  O26  X12  O 1
+
+------
+
+
+Challenge 4-2
+looser is with score 25925 
+    X69  X51  O39  O95  O98
+    X90  X61  X91  X 6  X21
+    O25  O57  X81  O10  X49
+    X67  O55  O43  X96  X17
+    X78  X11  O 3  X64  X77
+
+------
+
+

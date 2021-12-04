@@ -1,4 +1,9 @@
-run();
+import { writeOutput } from './write-output';
+
+let output = '';
+run().then(() => {
+  writeOutput(output);
+});
 
 async function run() {
   for (let i = 1; i <= 25; i++) {
@@ -9,12 +14,12 @@ async function run() {
 
 function runChallenge(i: number, j: number) {
   return import(`./day-${i}/challenge-${j}`).then((res: { default: () => string }) => {
-    console.log(`Challenge ${i}-${j}`);
-    console.log(res.default());
-    console.log('------');
+    const header = `Challenge ${i}-${j}`;
+    const content = res.default();
+    const footer = '------\n';
+
+    output += `${header}\n${content}\n${footer}\n\n`;
+    console.log(output);
   }, () => {
-    console.log(`Challenge ${i}-${j}`);
-    console.log('not yet available');
-    console.log('------');
   });
 }
