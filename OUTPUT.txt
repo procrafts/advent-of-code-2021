@@ -50,3 +50,13 @@ looser is with score 25925
 ------
 
 
+Challenge 5-1
+Hydrothermal vent overlaps: 6311
+------
+
+
+Challenge 5-2
+Hydrothermal vent overlaps: 19929
+------
+
+
