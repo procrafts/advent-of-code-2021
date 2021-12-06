@@ -60,3 +60,13 @@ Hydrothermal vent overlaps: 19929
 ------
 
 
+Challenge 6-1
+swarm size after 80 days is 362346
+------
+
+
+Challenge 6-2
+swarm size after 256 days is 1639643057051
+------
+
+
