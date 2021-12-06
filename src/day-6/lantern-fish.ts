@@ -18,7 +18,9 @@ export class LanternFish {
     LanternFish.swarm = LanternFish.createSwarm(readInput(['day-6', source])[0]);
   }
 
-  static passDays(days: number) {
+  static passDays(totalDays: number): void {
+    const days = totalDays % 7;
+    const weeks = Math.floor(totalDays / 7);
     for (let d = 0; d < days; d++) {
       const newSwarm = [...new Array(9)].map(() => 0);
       for (let i = 0; i <= 8; i++) {
@@ -27,6 +29,18 @@ export class LanternFish {
           newSwarm[6] += LanternFish.swarm[i];
         } else {
           newSwarm[i - 1] += LanternFish.swarm[i];
+        }
+      }
+      LanternFish.swarm = newSwarm;
+    }
+    for (let w = 0; w < weeks; w++) {
+      const newSwarm = [...LanternFish.swarm];
+      for (let i = 0; i <= 8; i++) {
+        if (i > 6) {
+          newSwarm[i] -= LanternFish.swarm[i];
+          newSwarm[i - 7] += LanternFish.swarm[i];
+        } else {
+          newSwarm[8 - (6 - i)] += LanternFish.swarm[i];
         }
       }
       LanternFish.swarm = newSwarm;
