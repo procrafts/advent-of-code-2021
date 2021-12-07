@@ -1,3 +1,6 @@
+import { Crabs } from './crabs';
+
 export default function(): string {
-  return 'result';
+  const [bestPosition, lowestConsumption] = new Crabs('input', 'summation').lowestConsumption;
+  return `lowest consumption of ${lowestConsumption} at position ${bestPosition}`;
 }

@@ -70,3 +70,13 @@ swarm size after 256 days is 1639643057051
 ------
 
 
+Challenge 7-1
+lowest consumption of 349769 at position 331
+------
+
+
+Challenge 7-2
+lowest consumption of 99540554 at position 479
+------
+
+
