@@ -1,4 +1,5 @@
 import { readInput } from '../read-input';
+import { Source } from '../source';
 
 export class LanternFish {
   static swarm: number[] = [];
@@ -14,7 +15,7 @@ export class LanternFish {
     }, [...new Array(9)].map(() => 0));
   }
 
-  static setInitialSwarm(source: 'example' | 'input' = 'example') {
+  static setInitialSwarm(source: Source = 'example') {
     LanternFish.swarm = LanternFish.createSwarm(readInput(['day-6', source])[0]);
   }
 
