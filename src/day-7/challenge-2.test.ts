@@ -1,21 +1,22 @@
-import { findLowestConsumption } from './find-lowest-consumption';
-import { getGroupedCrabPositions } from './get-grouped-crab-positions';
-import { moveCrabsToPosition } from './move-crabs-to-position';
+import { Crabs } from './crabs';
 
 describe('challenge 7-2', () => {
 
   describe('consumption', () => {
 
+    const exampleCrabs = new Crabs('example', 'summation');
+    const challengeCrabs = new Crabs('input', 'summation');
+
     it('get fuel consumption for position 5', () => {
-      expect(moveCrabsToPosition(5, getGroupedCrabPositions('example'), 'summation')).toBe(168);
+      expect(exampleCrabs.specificConsumption(5)).toBe(168);
     });
 
     it('example', () => {
-      expect(findLowestConsumption('summation', 'example')).toStrictEqual([5, 168]);
+      expect(exampleCrabs.lowestConsumption).toStrictEqual([5, 168]);
     });
 
     it('challenge', () => {
-      expect(findLowestConsumption('summation', 'input')).toStrictEqual([479, 99540554]);
+      expect(challengeCrabs.lowestConsumption).toStrictEqual([479, 99540554]);
     });
   });
 });
