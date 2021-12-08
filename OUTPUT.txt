@@ -80,3 +80,13 @@ lowest consumption of 99540554 at position 479
 ------
 
 
+Challenge 8-1
+digits 1, 4, 7, or 8 appear 342 times
+------
+
+
+Challenge 8-2
+sum of all displays is 1068933
+------
+
+
