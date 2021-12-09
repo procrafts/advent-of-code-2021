@@ -1,3 +1,5 @@
+import { SmokeBasin } from './smoke-basin';
+
 export default function(): string {
-  return 'result';
+  return `product of largest three basins ${new SmokeBasin('input').productLargestThree}`;
 }

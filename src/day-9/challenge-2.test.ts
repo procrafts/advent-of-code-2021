@@ -20,7 +20,7 @@ describe('challenge 9-2', () => {
     });
     test('challenge', () => {
       const smokeBasin = new SmokeBasin('input');
-      expect(smokeBasin.productLargestThree).toStrictEqual(912548);
+      expect(smokeBasin.productLargestThree).toStrictEqual(1280496);
     });
   });
 });

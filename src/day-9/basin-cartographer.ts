@@ -20,11 +20,11 @@ export class BasinCartographer {
   }
 
   private chartTop({ y, x, height }: HeightPoint) {
-    if (y === 0 || this.basin[y - 1][x] !== undefined) {
+    if (y === 0 || this.basin[y - 1][x] === true) {
       return;
     }
-    if (height + 1 === this.heightMap[y - 1][x]) {
-      this.chartBasin({ y: y - 1, x, height: height + 1 });
+    if (this.heightMap[y - 1][x] >= height) {
+      this.chartBasin({ y: y - 1, x, height: this.heightMap[y - 1][x] });
       return;
     }
   }
@@ -33,8 +33,8 @@ export class BasinCartographer {
     if (y === this.heightMap.length - 1 || this.basin[y + 1][x] !== undefined) {
       return;
     }
-    if (height + 1 === this.heightMap[y + 1][x]) {
-      this.chartBasin({ y: y + 1, x, height: height + 1 });
+    if (this.heightMap[y + 1][x] >= height) {
+      this.chartBasin({ y: y + 1, x, height: this.heightMap[y + 1][x] });
       return;
     }
   }
@@ -43,8 +43,8 @@ export class BasinCartographer {
     if (x === 0 || this.basin[y][x - 1] !== undefined) {
       return;
     }
-    if (height + 1 === this.heightMap[y][x - 1]) {
-      this.chartBasin({ y, x: x - 1, height: height + 1 });
+    if (this.heightMap[y][x - 1] >= height) {
+      this.chartBasin({ y, x: x - 1, height: this.heightMap[y][x - 1] });
       return;
     }
   }
@@ -53,8 +53,8 @@ export class BasinCartographer {
     if (x === this.heightMap[0].length - 1 || this.basin[y][x + 1] !== undefined) {
       return;
     }
-    if (height + 1 === this.heightMap[y][x + 1]) {
-      this.chartBasin({ y, x: x + 1, height: height + 1 });
+    if (this.heightMap[y][x + 1] >= height) {
+      this.chartBasin({ y, x: x + 1, height: this.heightMap[y][x + 1] });
       return;
     }
   }
