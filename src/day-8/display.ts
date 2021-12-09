@@ -9,7 +9,7 @@ export class Display {
   }
 
   static createDisplays(source: Source = 'example') {
-    return readInput(['day-8', source], { trim: true, filterEmpty: true })
+    return readInput(['day-8', source])
       .map(line => line
         .split('|')
         .map((group) => group.split(' ').filter(i => !!i))

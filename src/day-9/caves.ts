@@ -26,7 +26,7 @@ export class Caves {
   }
 
   private setHeightMap(source: Source) {
-    const lines = readInput(['day-9', source], { trim: true, filterEmpty: true });
+    const lines = readInput(['day-9', source]);
     const lineLength = lines[0].split('').length;
     const heightMap = [...new Array(lines.length)].map(() => [...new Array(lineLength)]);
 
