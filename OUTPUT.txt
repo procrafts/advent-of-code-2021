@@ -90,3 +90,13 @@ sum of all displays is 1068933
 ------
 
 
+Challenge 9-1
+risk level sum is 468
+------
+
+
+Challenge 9-2
+product of largest three basins 1280496
+------
+
+
