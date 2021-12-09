@@ -1,6 +1,5 @@
-import { readInput } from '../read-input';
-import { countOverlapsFactory } from './count-overlaps';
+import { VentsChart } from './vents-chart';
 
 export default function(): string {
-  return `Hydrothermal vent overlaps: ${countOverlapsFactory(false)(...readInput(['day-5', 'input']))}`;
+  return `Hydrothermal vent overlaps: ${new VentsChart(true, 'input').dangerZones}`;
 }
