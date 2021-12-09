@@ -106,13 +106,13 @@ export class Display {
   mapToNumber(): Record<number, string> {
     const wireSegmentMap = this.useFourToDetermineSegmentD(this.useOneToDetermineSegmentC(this.wireSegmentMapping()));
     this.checkWireSegmentMapDetermination(wireSegmentMap);
-    const a = Object.values(wireSegmentMap).find((value) => value[0] === 'a')[0];
-    const b = Object.values(wireSegmentMap).find((value) => value[0] === 'b')[0];
-    const c = Object.values(wireSegmentMap).find((value) => value[0] === 'c')[0];
-    const d = Object.values(wireSegmentMap).find((value) => value[0] === 'd')[0];
-    const e = Object.values(wireSegmentMap).find((value) => value[0] === 'e')[0];
-    const f = Object.values(wireSegmentMap).find((value) => value[0] === 'f')[0];
-    const g = Object.values(wireSegmentMap).find((value) => value[0] === 'g')[0];
+    const a = Object.entries(wireSegmentMap).find(([, value]) => value[0] === 'a')[0];
+    const b = Object.entries(wireSegmentMap).find(([, value]) => value[0] === 'b')[0];
+    const c = Object.entries(wireSegmentMap).find(([, value]) => value[0] === 'c')[0];
+    const d = Object.entries(wireSegmentMap).find(([, value]) => value[0] === 'd')[0];
+    const e = Object.entries(wireSegmentMap).find(([, value]) => value[0] === 'e')[0];
+    const f = Object.entries(wireSegmentMap).find(([, value]) => value[0] === 'f')[0];
+    const g = Object.entries(wireSegmentMap).find(([, value]) => value[0] === 'g')[0];
 
     const numbers = {
       0: a + b + c + e + f + g,
@@ -138,7 +138,7 @@ export class Display {
     const numbers = this.mapToNumber();
     const sortedFourDigits = this.fourDigits.map(digit => Array.from(digit).sort().join(''));
     return sortedFourDigits.map(digit => {
-      const match = Object.values(numbers).find((val) => val === digit);
+      const match = Object.entries(numbers).find(([, val]) => val === digit);
       return match[0];
     });
   }
