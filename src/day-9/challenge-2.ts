@@ -1,5 +1,5 @@
-import { SmokeBasin } from './smoke-basin';
+import { Caves } from './caves';
 
 export default function(): string {
-  return `product of largest three basins ${new SmokeBasin('input').productLargestThree}`;
+  return `product of largest three basins ${new Caves('input').productLargestThree}`;
 }

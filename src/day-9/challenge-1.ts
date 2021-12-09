@@ -1,5 +1,5 @@
-import { SmokeBasin } from './smoke-basin';
+import { Caves } from './caves';
 
 export default function(): string {
-  return `risk level sum is ${new SmokeBasin('input').lowPointsSum}`;
+  return `risk level sum is ${new Caves('input').lowPointsSum}`;
 }

@@ -1,25 +1,25 @@
-import { BasinCartographer } from './basin-cartographer';
-import { SmokeBasin } from './smoke-basin';
+import { Cartographer } from './cartographer';
+import { Caves } from './caves';
 
 describe('challenge 9-2', () => {
   describe('smoke basin', () => {
     test('chart basin', () => {
-      const basin = new SmokeBasin();
-      const cartographer = new BasinCartographer(basin.lowPoints[0], basin.heightMap);
+      const basin = new Caves();
+      const cartographer = new Cartographer(basin.lowPoints[0], basin.heightmap);
       expect(cartographer.basin).toStrictEqual([
-        [true, true, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
-        [true, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
-        [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
-        [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
-        [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
+        [true, true, false, false, false, false, false, false, false, false],
+        [true, false, false, false, false, false, false, false, false, false],
+        [false, false, false, false, false, false, false, false, false, false],
+        [false, false, false, false, false, false, false, false, false, false],
+        [false, false, false, false, false, false, false, false, false, false]
       ]);
     });
     test('example', () => {
-      const smokeBasin = new SmokeBasin();
+      const smokeBasin = new Caves();
       expect(smokeBasin.productLargestThree).toStrictEqual(1134);
     });
     test('challenge', () => {
-      const smokeBasin = new SmokeBasin('input');
+      const smokeBasin = new Caves('input');
       expect(smokeBasin.productLargestThree).toStrictEqual(1280496);
     });
   });
