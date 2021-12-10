@@ -100,3 +100,13 @@ product of largest three basins 1280496
 ------
 
 
+Challenge 10-1
+syntax check score is 399153
+------
+
+
+Challenge 10-2
+autocomplete score is 2995077699
+------
+
+
