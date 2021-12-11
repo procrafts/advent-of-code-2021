@@ -39,7 +39,7 @@ export class Caves {
   }
 
   private setLowPoints() {
-    this.heightmap.forEach((line, y) => line.map((height, x) => {
+    this.heightmap.forEach((line, y) => line.forEach((height, x) => {
       if (this.isLowPoint({ y, x, height })) {
         this.lowPoints.push({ y, x, height });
       }
