@@ -110,3 +110,13 @@ autocomplete score is 2995077699
 ------
 
 
+Challenge 11-1
+1585 total total flashes after 100 steps
+------
+
+
+Challenge 11-2
+synchronizing on step 382
+------
+
+
