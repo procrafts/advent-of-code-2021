@@ -23,7 +23,6 @@ export class Octopuses {
     for (let i = 0; i < repeatOrUntilSync; i++) {
       this.doStep();
     }
-    return repeatOrUntilSync;
   }
 
   private doUntilSynchronizing() {
