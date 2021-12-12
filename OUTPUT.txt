@@ -120,3 +120,13 @@ synchronizing on step 382
 ------
 
 
+Challenge 12-1
+3495 paths
+------
+
+
+Challenge 12-2
+94849 paths
+------
+
+
